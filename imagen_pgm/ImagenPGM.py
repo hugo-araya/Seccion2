@@ -76,6 +76,9 @@ def Informacion(imagen):
     print('Alto  :', Alto(imagen))
     print('Grises:', Grises(imagen))
     print('Promedio: ', PromedioPixeles(imagen))
+    print()
+    print('--------------------------------------')
+    print()
 
 def Pixeles(imagen):
     return imagen['pixeles']
@@ -107,3 +110,20 @@ def EscribirImagen(nuevoNombre, imagen):
     sal.write('\n')
     sal.close()
 
+def Binariza(imagen):
+    nueva_imagen = CreaImagen()
+    nueva = []
+    pixeles = Pixeles(imagen)
+    promedio = PromedioPixeles(imagen)
+    for pixel in pixeles:
+        if pixel >= promedio:
+            nueva.append(255)
+        else:
+            nueva.append(0)
+    nueva_imagen['magica'] = Magica(imagen)
+    nueva_imagen['comentario'] = Comentario(imagen)
+    nueva_imagen['ancho'] = Ancho(imagen)
+    nueva_imagen['alto'] = Alto(imagen)
+    nueva_imagen['gris'] = 255
+    nueva_imagen['pixeles'] = nueva[:]
+    return nueva_imagen
