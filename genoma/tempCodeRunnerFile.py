@@ -1,0 +1,1 @@
+d = desorden(l)
