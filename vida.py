@@ -35,7 +35,6 @@ def leer_datos(nombre):
     linea = ent.readline().rstrip('\n')
     m, n, k, l = devuelve_variables(linea)
     tablero = devuelve_tablero(ent, m, n)
-    mostrar_tablero(tablero, 'De paso')
     ent.close()
     return tablero, l
 
