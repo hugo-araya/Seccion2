@@ -7,7 +7,8 @@ def funcion1():
 
 if __name__== '__main__' :
     ventana = Tk()
-    boton = Button(ventana, text='Boton 1', command = funcion1)
+    n = 5
+    boton = Button(ventana, text='Boton 1', command = funcion1(n))
     boton.grid(column=0, row=0)
     ventana.mainloop()
 
